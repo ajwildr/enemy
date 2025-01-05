@@ -219,7 +219,7 @@ if (isset($_POST['send_email'])) {
     <div class="container">
         <div class="header">
             <h1>Low Stock Products</h1>
-            <a href="admin_dashboard.php" class="back-button">
+            <a href="<?php echo ($role == 'Admin') ? 'admin_dashboard.php' : 'manager_dashboard.php'; ?>" class="back-button">
                 <i class="fas fa-arrow-left"></i> Back to Dashboard
             </a>
         </div>
