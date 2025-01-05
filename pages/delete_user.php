@@ -19,8 +19,8 @@ if (isset($_GET['user_id'])) {
     if ($delete_stmt) {
         $delete_stmt->bind_param("i", $user_id);
         if ($delete_stmt->execute()) {
-            header("Location: manage_users.php?success=User deleted successfully.");
-            exit;
+            echo '<script>window.location.href = "manage_users.php?success=User deleted successfully";</script>';
+            
         } else {
             $error_message = "Failed to delete user: " . $delete_stmt->error;
         }
