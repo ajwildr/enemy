@@ -30,6 +30,10 @@ if ($stmt) {
 }
 
 // Redirect back to the suppliers management page
-header("Location: manage_suppliers.php");
-exit;
+echo '<script>
+    setTimeout(function() {
+        window.location.href = "manage_suppliers.php";
+    }, 100);
+</script>';
+
 ?>
