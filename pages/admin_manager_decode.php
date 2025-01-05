@@ -19,8 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['qr-file'])) {
         $rackId = $qrReader->text();
         
         if ($rackId) {
-            header("Location: admin_manager_details.php?rack_id=" . urlencode($rackId));
-            exit;
+            echo "<script>window.location.href = 'admin_manager_details.php?rack_id=" . urlencode($rackId) . "';</script>";
         } else {
             die("Failed to decode the QR code. Please try again.");
         }
