@@ -9,8 +9,7 @@ if ($_SESSION['role'] != 'Admin') {
 
 // Check if supplier ID is provided
 if (!isset($_GET['supplier_id']) || empty($_GET['supplier_id'])) {
-    header("Location: manage_suppliers.php");
-    exit;
+    echo '<script>window.location.href = "manage_suppliers.php";</script>';
 }
 
 $supplier_id = $_GET['supplier_id'];
